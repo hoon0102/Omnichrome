@@ -12,12 +12,16 @@
             font-family: 'Pretendard';
         }
         body, h2, ol, li, ul{margin: 0; padding: 0;}
+        nav{background: rgba(0, 0, 0, 0.5); height: 100px;}
+        nav .logo{font-size: 2em; height: 50px; line-height: 50px; font-weight: 100; width: 200px; float: left; text-align: center;}
         h1{text-align: center; padding-top: 50px; font-size: 7em; font-weight: 100; margin-top: 17%; margin-left: 30%; letter-spacing: 60px;}
         h2{text-align: center; padding-top: 1050px; font-size: 4em; font-weight: 100; margin-top: 23%; letter-spacing: 80px;}
         h3{text-align: center; line-height: 250px; padding-top: 550px; font-size: 4em; font-weight: 100; margin-top: 10%; letter-spacing: 80px;}
         h4{color: white; margin-left: 35.5%; position: absolute; margin-top: -50px; font-size: 0.5em; font-weight: 100; letter-spacing: 5px;}
+        h5{color: white; margin-left: 60%; position: absolute; margin-top: -250px; font-size: 0.5em; font-weight: 100; letter-spacing: 5px;}
         a{
             text-decoration: none;
+            display: block;
             color: white;
         }
         div{
@@ -31,9 +35,9 @@
         }
         footer{
             height: 5000px;
-            background: rgba(0, 0, 0, 0.5);
         }
         .bgheader{background: url('bg.jpg'); background-size: cover; background-attachment: scroll;}
+        .awing{position: sticky; top: 0; z-index: 50;}
         .textwhite{color: white;}
         .anchorInfo{
             display: block;
@@ -52,6 +56,13 @@
             margin-top: 250px;
             padding-left: 45%;
         }
+        .wrapper{
+            width: 1280px; 
+            margin: auto;
+            padding: 10px;
+        }
+        .thumbnails{display: flex; gap: 2vw 4%; flex-wrap: wrap;}
+        .col3{width: 350px; height: 350px;}
 		#image {
             position: fixed;
             padding-top: 80px;
@@ -82,6 +93,11 @@
 	</script>
 </head>
 <body class="bgheader">
+    <nav class="awing">
+        <div class="logo">
+            <a href="index.html">OMNICHROME</a>
+        </div>
+    </nav>
     <img id="image" src="rend_o.png">
     <header>
         <div>
@@ -110,11 +126,19 @@
             <h3 class="textwhite">
                 <span class="anchorKeyf" id="keyf"></span>
                 KEY-<br>FUNCTI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N
+                <a href="keyfunc.html">
+                    <h5>DETAIL</h5>
+                </a>
             </h3>
         </div>
     </section>
-    <div ></div>
     <footer>
+        <div class="wrapper">
+            <div class="thumbnails">
+                <img class="col3" src="rend_o.png">
+                <img class="col3" src="rend_o.png">
+            </div>
+        </div>
     </footer>
 </body>
 </html>
