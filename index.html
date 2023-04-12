@@ -65,6 +65,7 @@
         .col3{width: 350px; height: 350px; text-align: center;}
         .op{margin-top: 100px; color: white; font-size: 2em;}
         .btn{color: white; text-align: center; font-size: 2em;}
+        .visible{visibility: hidden;}
 		#image {
             position: fixed;
             padding-top: 80px;
@@ -77,20 +78,23 @@
     <script>
 		window.addEventListener('scroll', function() {
 			var img = document.getElementById('image');
+            var  imgVis = document.getElementById('imageVis');
             var footer = document.getElementsByTagName('footer')[0];
             var footerTop = footer.offsetTop;
             var scrolled = window.pageYOffset;
             if (scrolled >= footerTop - img.clientHeight) {
                 img.style.transform = 0;
-                if (img.classList.contains('fixed')){
-                    img.classList.remove('fixed');
-                }
+                img.style.position = 'relative';
             } else {
                 img.style.transform = 'translateX(' + scrolled/5 + 'px)';
-                if (!img.classList.contains('fixed')){
-                    img.classList.add('fixed');
-                }
+                img.style.position = 'fixed';
             }
+            if (scrolled >= footerTop - img.clientHeight) {
+                imgVis.style.visibility = 'visible';
+            } else {
+                imgVis.style.visibility = 'hidden';
+            }
+
         });
 	</script>
 </head>
@@ -139,6 +143,7 @@
             <div class="thumbnails">
                 <img class="col3" src="rend_o_b.png">
                 <img class="col3" src="rend_o_c.png">
+                <img id="imageVis" class="col3" src="rend_o.png">
             </div>
             <div class=" thumbnails">
                 <div class="col3 op">option1</div>
